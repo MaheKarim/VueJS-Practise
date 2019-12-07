@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>VueJS Practise</title>
 </head>
 <body>
-    <input type="text" id="input">
+   <div id="root">
+        <input type="text" id="input" v-model="message">
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <p> The Value Of Input is: {{ message }} </p>
+   </div>
+   
+
+   
     <script>
-           let data = {
-               message: 'Hellow World'
-           };
-           document.querySelector('#input').value = data.message;
+        //    let data = {
+        //        message: 'Hellow World'
+        //    };
+        //   document.querySelector('#input').value = data.message;
+
+           new Vue({           // create vue instance
+               el: '#root',    // binded to elements
+               data: {
+                message: 'Hellow World'          // model of vue
+               }
+           })
     </script>
 
     
