@@ -10,8 +10,11 @@
     <div id="root">
         <h1>Skills: </h1>
         <ul>
-            <li v-for="skill in skills">
-                {{ skill }}
+            <li v-for="(skill, i) in skills">
+              {{ i+1 }} . {{ skill.name }} ({{ skill.experience }})
+              <!--
+                  if {{ i }}  only it will be count from 0
+               -->
             </li>
         </ul>
     </div>
@@ -20,10 +23,19 @@
         var app = new Vue({
            el: "#root",
            data: {
-               skills: ["HTML", "PHP", "JS"]
+            //    skills: ["HTML", "PHP", "JS"]
+            skills: [
+                {name: "HTML", experience: 5},
+                {name: "JS", experience: 15},
+                {name: "CSS", experience: 55},
+                {name: "BULMA", experience: 35},
+                {name: "Vue.JS", experience: 25},
+            ]
+
            } 
         });
     </script>
+    <!-- Console Log / Reactive:  -->
     <!-- app.skills.push("Vue") -->
     <!-- app.skills.pop() -->
 </body>
