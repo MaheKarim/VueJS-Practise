@@ -17,7 +17,12 @@
      <input type="text" id="name" onkeyup="change() ">
      <br>
      <h1 id="output">Your name is: </h1> -->
-
+     <div id="app-2">
+            <span v-bind:title="message">
+              Hover your mouse over me for a few seconds
+              to see my dynamically bound title!
+            </span>
+          </div>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"> </script>
      <script>
          var app = new Vue({
@@ -30,6 +35,13 @@
              },
          });
 
+         var app2 = new Vue({
+             el: '#app-2',
+             data: {
+             message: 'You loaded this page on ' + new Date().toLocaleString()
+             }
+          });
+
 
         //  var data ={ name: "Mahe" };
         //  document.getElementById("name").value = data.name;
@@ -38,6 +50,8 @@
         //  function change(){
 
         //  }
+
+        
     
     
      </script>
