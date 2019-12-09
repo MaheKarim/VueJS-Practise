@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List rendering</title>
+</head>
+<body>
+    <div id="root">
+        <h1>Skills: </h1>
+        <ul>
+            <li v-for="(skill, i) in skills" v-if="skill.experience > 35">
+              <p>{{ i+1 }} . {{ skill.name }} ({{ skill.experience }})</p>
+              <!--
+                  if {{ i }}  only it will be count from 0
+               -->
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"> </script>
+    <script type="text/javascript">
+        var app = new Vue({
+           el: "#root",
+           data: {
+            //    skills: ["HTML", "PHP", "JS"]
+            skills: [
+                {name: "HTML", experience: 5},
+                {name: "JS", experience: 15},
+                {name: "CSS", experience: 55},
+                {name: "BULMA", experience: 35},
+                {name: "Vue.JS", experience: 25},
+            ]
+
+           } 
+        });
+    </script>
+    <!-- Console Log / Reactive:  -->
+    <!-- app.skills.push("Vue") -->
+    <!-- app.skills.pop() -->
+</body>
+</html>
+
